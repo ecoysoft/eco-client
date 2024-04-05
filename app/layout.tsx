@@ -26,7 +26,7 @@ export default function RootLayout({
           direction="column"
           justifyContent="space-between"
           alignItems="center"
-          style={{ height: "100vh", width: "100%" }}
+          style={{ width: "100%" }}
         >
           <TopNav />
           {children}

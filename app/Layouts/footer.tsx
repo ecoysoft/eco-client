@@ -1,176 +1,142 @@
-export const Footer = () => {
+import Link from "next/link";
+import React from "react";
+
+interface FooterData {
+  id: number;
+  title: string;
+  link1: string;
+  link2?: string;
+  link3?: string;
+  link4?: string;
+}
+
+const footerData: FooterData[] = [
+  {
+    id: 1,
+    title: "EcoySoft",
+    link1: "support@gmail.com",
+    link2: "+8801766756578",
+  },
+  {
+    id: 2,
+    title: "Company",
+    link1: "FAQ",
+    link3: "Blogs",
+    link4: "Carrier",
+  },
+  {
+    id: 3,
+    title: "Locations",
+    link1: "Austin TX",
+    link3: "Dhaka",
+    link4: "Bangladesh",
+  },
+  {
+    id: 4,
+    title: "Newsletter",
+  },
+  {
+    id: 5,
+    title: "Home",
+    link1: "Business",
+    link3: "Enterprise",
+    link4: "Customer Success",
+  },
+
+  {
+    id: 6,
+    title: "Resources",
+    link1: "Forum",
+    link3: "Supports",
+  },
+];
+
+export const Footer: React.FC = () => {
   return (
-    <footer class=" body-font bg-black w-[1440px]">
-      <div class=" w-[1170px] py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-        <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
-          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-200">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span class="ml-3 text-xl">Footer</span>
-          </a>
-          <p class="mt-2 text-sm text-gray-100">
-            Air plant banjo lyft occupy retro adaptogen indego
-          </p>
-        </div>
-        <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 class="title-font font-medium text-gray-200 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a class="text-gray-100 ">First Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100 ">Second Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100 ">Third Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100 ">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 class="title-font font-medium text-gray-200 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a class="text-gray-200 ">First Link</a>
-              </li>
-              <li>
-                <a class="text-gray-200 ">Second Link</a>
-              </li>
-              <li>
-                <a class="text-gray-200 ">Third Link</a>
-              </li>
-              <li>
-                <a class="text-gray-200 ">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a class="text-gray-100 ">First Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100">Second Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100 ">Third Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100 ">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 class="title-font font-medium text-gray-100 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a class="text-gray-100">First Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100 ">Second Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100 ">Third Link</a>
-              </li>
-              <li>
-                <a class="text-gray-100">Fourth Link</a>
-              </li>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <div class="">
-        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-          <p class=" text-sm text-center sm:text-left">
-            © 2020 Footer —
-            <a
-              href="https://twitter.com/knyttneve"
-              rel="noopener noreferrer"
-              class="text-gray-100 ml-1"
-              target="_blank"
-            >
-              @MrsRobbot
-            </a>
-          </p>
-          <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-            <a class="text-white">
-              <svg
-                fill="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-5 h-5"
-                viewBox="0 0 24 24"
+    <footer className="bg-black w-full mx-auto flex flex-col items-center">
+      <div className="w-full max-w-[1170px] py-8 md:py-24 sm:px-20">
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 justify-center md:justify-start md:grid-cols-4 gap-y-8 md:gap-y-0  md:items-start sm:items-start text-white">
+            {footerData.map((item) => (
+              <div
+                key={item.id}
+                className={`flex flex-col justify-start items-center md:items-start sm:items-start ${
+                  item.title === "Home" || item.title === "Resources"
+                    ? "md:mt-8"
+                    : ""
+                }`}
               >
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-              </svg>
-            </a>
-            <a class="ml-3 text-gray-100">
-              <svg
-                fill="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-5 h-5"
-                viewBox="0 0 24 24"
-              >
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-              </svg>
-            </a>
-            <a class="ml-3 text-gray-100">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-5 h-5"
-                viewBox="0 0 24 24"
-              >
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-              </svg>
-            </a>
-            <a class="ml-3 text-gray-100">
-              <svg
-                fill="currentColor"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="0"
-                class="w-5 h-5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="none"
-                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                ></path>
-                <circle cx="4" cy="4" r="2" stroke="none"></circle>
-              </svg>
-            </a>
-          </span>
+                <p className="mb-2 md:mb-4 text-xl font-semibold">
+                  {item.title}
+                </p>
+
+                <Link href={""} passHref className="mb-2">
+                  {item.link1}
+                </Link>
+                {item.link2 && (
+                  <Link href={""} passHref className="mb-2">
+                    {item.link2}
+                  </Link>
+                )}
+                {item.link3 && (
+                  <Link href={""} passHref className="mb-2">
+                    {item.link3}
+                  </Link>
+                )}
+                {item.link4 && (
+                  <Link href={""} passHref>
+                    {item.link4}
+                  </Link>
+                )}
+                {item.title === "EcoySoft" && (
+                  <div className="flex justify-center items-center mt-2 md:mt-0">
+                    <Link href={""} className="mx-2">
+                      facebook
+                    </Link>
+                    <Link href={""} className="mx-2">
+                      youtube
+                    </Link>
+                    <Link href={""} className="mx-2">
+                      instagram
+                    </Link>
+                  </div>
+                )}
+                {item.title === "Newsletter" && (
+                  <div className="flex flex-col items-center md:items-start">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Enter Email"
+                      className="w-full border border-gray-300 bg-inherit outline-none rounded-lg px-4 py-2 mb-2"
+                    />
+                    <div className=" ">
+                      <input
+                        type="submit"
+                        value="Submit"
+                        className="px-6 py-2 bg-yellow-500 text-[18px] rounded-lg cursor-pointer "
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </>
+        {/* footer bottom section */}
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center text-white pt-8 md:pt-16">
+          <p className="mb-4 md:mb-0">@2024 EcoySoft Ltd</p>
+          <div className="flex justify-center items-center mt-4 md:mt-0">
+            <Link href={""} className="mx-4">
+              Terms of use
+            </Link>
+            <Link href={""} className="mx-4">
+              Privacy Policy
+            </Link>
+            <Link href={""} className="mx-4">
+              Terms of Services
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
