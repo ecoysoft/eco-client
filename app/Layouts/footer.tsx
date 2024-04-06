@@ -13,9 +13,9 @@ interface FooterData {
 const footerData: FooterData[] = [
   {
     id: 1,
-    title: "EcoySoft",
-    link1: "support@gmail.com",
-    link2: "+8801766756578",
+    title: "ecoysoft environmental Inc.",
+    link1: "ecoysofy@gmail.com",
+    link2: "+8801937270044",
   },
   {
     id: 2,
