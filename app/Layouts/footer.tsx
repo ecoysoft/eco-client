@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
                     {item.link4}
                   </Link>
                 )}
-                {item.title === "EcoySoft" && (
+                {item.title === "ecoysoft" && (
                   <div className="flex justify-center items-center mt-2 md:mt-0">
                     <Link href={""} className="mx-2">
                       facebook
