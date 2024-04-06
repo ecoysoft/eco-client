@@ -13,7 +13,7 @@ interface FooterData {
 const footerData: FooterData[] = [
   {
     id: 1,
-    title: "ecoysoft environmental Inc.",
+    title: "ecoysoft",
     link1: "ecoysofy@gmail.com",
     link2: "+8801937270044",
   },
@@ -125,7 +125,7 @@ export const Footer: React.FC = () => {
         </>
         {/* footer bottom section */}
         <div className="flex flex-col md:flex-row justify-center md:justify-between items-center text-white pt-8 md:pt-16">
-          <p className="mb-4 md:mb-0">@2024 EcoySoft Ltd</p>
+          <p className="mb-4 md:mb-0">@2024 ecoysoft environment Inc.</p>
           <div className="flex justify-center items-center mt-4 md:mt-0">
             <Link href={""} className="mx-4">
               Terms of use
