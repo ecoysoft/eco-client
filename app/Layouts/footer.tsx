@@ -14,7 +14,7 @@ const footerData: FooterData[] = [
   {
     id: 1,
     title: "ecoysoft",
-    link1: "ecoysofy@gmail.com",
+    link1: "ecoysoft@gmail.com",
     link2: "+8801937270044",
   },
   {
