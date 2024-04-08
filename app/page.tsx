@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import { WhyChooseUs } from "./sections/home/why-choose-us";
+import { WhyChooseUs } from "../modules/sections/home/why-choose-us";
 
 const Page = () => {
   return (

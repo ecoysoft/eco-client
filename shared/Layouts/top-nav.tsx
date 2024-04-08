@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { Logo } from "../components/logo";
+import { Logo } from "../../components/logo";
 
 const pages = ["Home", "Service", "Pricing", "Blog", "Contact Us"];
 
