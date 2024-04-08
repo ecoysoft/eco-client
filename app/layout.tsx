@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import { Grid } from "@mui/material";
-import { TopNav } from "../shared/layouts/top-nav";
+import { TopNav } from "../shared/layout/top-nav";
 import "./globals.css";
-import Footer from "@/shared/layouts/footer";
+import Footer from "@/shared/layout/footer";
 
 const t_web = Titillium_Web({
   subsets: ["latin"],
