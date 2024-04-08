@@ -1,13 +1,14 @@
 "use client";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import { Container, styled } from "@mui/material";
+import { Container, styled, useMediaQuery, useTheme } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { Logo } from "../components/logo";
 
 const pages = ["Home", "Service", "Pricing", "Blog", "Contact Us"];
 
@@ -42,6 +43,8 @@ export const TopNav = () => {
     setAnchorElUser(null);
   };
 
+  const theme = useTheme();
+
   return (
     <AppBar position="sticky" sx={{ bgcolor: "#18191C" }}>
       <Container>
@@ -49,24 +52,10 @@ export const TopNav = () => {
           display={"flex"}
           justifyContent={"space-between"}
           alignItems={"center"}
-          py={{ xs: 0.5, md: 2 }}
+          // py={{ xs: 0.5, md: 2 }}
         >
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
+            <Logo />
           </Box>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -83,21 +72,7 @@ export const TopNav = () => {
           </Box>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              LOGO
-            </Typography>
+            <Logo />
           </Box>
 
           <Box
@@ -126,6 +101,9 @@ export const TopNav = () => {
 
           <Box sx={{}}>
             <Button
+              size={
+                useMediaQuery(theme.breakpoints.down("sm")) ? "small" : "medium"
+              }
               variant="outlined"
               color="inherit"
               sx={{ textTransform: "capitalize" }}
