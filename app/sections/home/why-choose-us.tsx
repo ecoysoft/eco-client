@@ -5,8 +5,11 @@ import {
   Container,
   Divider,
   Grid,
+  IconButton,
   Typography,
 } from "@mui/material";
+
+import { RiPlayCircleFill } from "react-icons/ri";
 
 export const WhyChooseUs = () => {
   const texts = {
@@ -69,7 +72,7 @@ export const WhyChooseUs = () => {
         #################### */}
 
       <Grid container spacing={{ xs: 2, md: 4 }}>
-        <Grid item xs={12} sm={6} md={5}>
+        <Grid item xs={12} sm={5}>
           <Box
             p={4}
             bgcolor={"black"}
@@ -113,7 +116,7 @@ export const WhyChooseUs = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} sm={6} md={7}>
+        <Grid item xs={12} sm={7}>
           <Box
             height={{ xs: 240, md: 300 }}
             sx={{
@@ -121,6 +124,7 @@ export const WhyChooseUs = () => {
                 content: "''",
                 backgroundImage: `url("https://images.unsplash.com/photo-1551135049-8a33b5883817?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
                 backgroundSize: "cover",
+
                 position: "absolute",
                 filter: "brightness(0.5)",
                 top: 0,
@@ -146,6 +150,25 @@ export const WhyChooseUs = () => {
             >
               how we work
             </Typography>
+
+            <IconButton
+              size="small"
+              sx={{
+                ":hover": {
+                  bgcolor: "#55E6A5",
+                  color: "white",
+                },
+
+                position: "absolute",
+                bgcolor: "white",
+                right: -20,
+                bottom: -20,
+                fontSize: { xs: 100, sm: 110, md: 130 },
+                color: "#55E6A5",
+              }}
+            >
+              <RiPlayCircleFill />
+            </IconButton>
           </Box>
         </Grid>
       </Grid>
