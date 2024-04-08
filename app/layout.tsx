@@ -18,12 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link
-        rel="shortcut icon"
-        href="../assets/image/favicon.ico"
-        type="image/x-icon"
-        sizes="any"
-      />
+      <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any" />
       <body className={inter.className}>
         <Grid container direction="column" alignItems="center">
           <TopNav />

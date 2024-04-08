@@ -12,7 +12,7 @@ const NotFoundPage: React.FC = () => {
       </p>
       <div className="animate-bounce">
         <svg
-          className="mx-auto h-12 w-12 sm:h-16 sm:w-16 text-red-500"
+          className="mx-auto h-12 w-12 sm:h-16 sm:w-16 text-green-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
