@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
-
 import { Grid } from "@mui/material";
-import { TopNav } from "../shared/Layouts/top-nav";
-import "../modules/styles/globals.css";
+import { TopNav } from "../shared/layouts/top-nav";
+import "./globals.css";
+import Footer from "@/shared/layouts/footer";
+
 const t_web = Titillium_Web({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
@@ -22,11 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any" />
-      <body className={t_web.className}>
+      <body>
         <Grid container direction="column" alignItems="center">
           <TopNav />
           {children}
         </Grid>
+        <Footer />
       </body>
     </html>
   );
