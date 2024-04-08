@@ -15,7 +15,7 @@ export const WhyChooseUs = () => {
   const texts = {
     text1: "Building a design easy for business",
     text2:
-      "Lorem ipsum dolor sit, abet consectetur adipisicing elit. Assumenda nulla voluptatibus laudantium aliquid ab sit, delectus voluptates soluta blanditiis illo imped libero! Aliquam totam ipsa quos maxime nihil ex doloribus",
+      "At ecoysoft Management, we simplify the design process for your business. Our expert designers and innovative solutions ensure seamless integration and impactful results. From concept to execution, we prioritize simplicity, efficiency, and excellence. Choose ecoysoft Management for an easier design journey and to stand out in today's competitive landscape.",
   };
 
   return (
