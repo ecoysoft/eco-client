@@ -1,3 +1,4 @@
+import ttl_web from "@/shared/font/ttl_web";
 import {
   Avatar,
   AvatarGroup,
@@ -38,6 +39,7 @@ export const WhyChooseUs = () => {
         >
           <Grid item md={6}>
             <Typography
+              className={ttl_web.className}
               typography={{ xs: "h4", md: "h3" }}
               style={{ fontWeight: 700 }}
               textAlign={{ xs: "center", md: "left" }}
@@ -47,6 +49,7 @@ export const WhyChooseUs = () => {
           </Grid>
           <Grid item md={6}>
             <Typography
+              className={ttl_web.className}
               textAlign={"justify"}
               sx={{
                 color: "GrayText",
@@ -85,12 +88,14 @@ export const WhyChooseUs = () => {
             <Box display={"flex"} justifyContent={{ xs: "center", md: "left" }}>
               <div>
                 <Typography
+                  className={ttl_web.className}
                   typography={{ xs: "h2", md: "h1" }}
                   color={"white"}
                   style={{ fontWeight: 700 }}
                 >
                   90
                   <Typography
+                    className={ttl_web.className}
                     component={"span"}
                     typography={{ xs: "h2", md: "h1" }}
                     color={"#55E6A5"}
@@ -99,7 +104,11 @@ export const WhyChooseUs = () => {
                     +
                   </Typography>
                 </Typography>
-                <Typography variant="caption" color={"whitesmoke"}>
+                <Typography
+                  variant="caption"
+                  className={ttl_web.className}
+                  color={"whitesmoke"}
+                >
                   Projects Completed
                 </Typography>
               </div>
@@ -141,6 +150,7 @@ export const WhyChooseUs = () => {
             }}
           >
             <Typography
+              className={ttl_web.className}
               position={"relative"}
               textAlign={"center"}
               color={"white"}

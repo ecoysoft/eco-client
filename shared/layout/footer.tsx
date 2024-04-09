@@ -11,7 +11,7 @@ import {
 
 const Footer: React.FC = () => {
   const containerStyle: React.CSSProperties = {
-    backgroundColor: "#e6f0df",
+    backgroundColor: "#F2F2F2",
     maxWidth: "100rem",
     margin: "auto",
     color: "#2d3748",
@@ -26,17 +26,18 @@ const Footer: React.FC = () => {
   };
 
   const textStyle: React.CSSProperties = {
-    fontSize: "0.75rem",
+    fontSize: "0.825rem",
+    padding: "0.25rem",
     textTransform: "uppercase",
-    color: "#979797",
+    color: "#ababab",
     fontWeight: 500,
   };
 
   const linkStyle: React.CSSProperties = {
     marginTop: "0.75rem",
     display: "block",
-    color: "#535353",
-    fontSize: "0.625rem",
+    color: "#838584",
+    fontSize: "0.675rem",
     padding: "0.25rem",
   };
 

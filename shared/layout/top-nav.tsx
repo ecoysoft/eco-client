@@ -9,6 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Logo } from "../../components/logo";
+import ttl_web from "../font/ttl_web";
 
 const pages = ["Home", "Service", "Pricing", "Blog", "Contact Us"];
 
@@ -85,6 +86,7 @@ export const TopNav = () => {
           >
             {pages.map((page) => (
               <Typography
+                className={ttl_web.className}
                 component="a"
                 href={page}
                 key={page}
@@ -101,6 +103,7 @@ export const TopNav = () => {
 
           <Box sx={{}}>
             <Button
+              className={ttl_web.className}
               size={
                 useMediaQuery(theme.breakpoints.down("sm")) ? "small" : "medium"
               }
