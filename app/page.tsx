@@ -1,22 +1,17 @@
-import { Box, Grid } from "@mui/material";
+import { MeetTeamMembers } from "@/modules/sections/home/meet-team-members";
+import { Grid } from "@mui/material";
 import { WhyChooseUs } from "../modules/sections/home/why-choose-us";
 
 const Page = () => {
   return (
-    <>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-        }}
-      >
-        <Grid container>
-          <Grid item>
-            <WhyChooseUs />
-          </Grid>
-        </Grid>
-      </Box>
-    </>
+    <Grid container justifyContent={"center"}>
+      <Grid item>
+        <WhyChooseUs />
+      </Grid>
+      <Grid item>
+        <MeetTeamMembers />
+      </Grid>
+    </Grid>
   );
 };
 

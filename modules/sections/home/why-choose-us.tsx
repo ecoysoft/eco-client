@@ -1,10 +1,10 @@
+import { Overview } from "@/components/overview";
 import ttl_web from "@/shared/font/ttl_web";
 import {
   Avatar,
   AvatarGroup,
   Box,
   Container,
-  Divider,
   Grid,
   IconButton,
   Typography,
@@ -13,60 +13,14 @@ import {
 import { RiPlayCircleFill } from "react-icons/ri";
 
 export const WhyChooseUs = () => {
-  const texts = {
-    text1: "Building a design easy for business",
-    text2:
-      "At ecoysoft Management, we simplify the design process for your business. Our expert designers and innovative solutions ensure seamless integration and impactful results. From concept to execution, we prioritize simplicity, efficiency, and excellence. Choose ecoysoft Management for an easier design journey and to stand out in today's competitive landscape.",
-  };
+  const tag = "Why Choose Us";
+  const title = "Building a design easy for business";
+  const description =
+    "At ecoysoft Management, we simplify the design process for your business. Our expert designers and innovative solutions ensure seamless integration and impactful results. From concept to execution, we prioritize simplicity, efficiency, and excellence. Choose ecoysoft Management for an easier design journey and to stand out in today's competitive landscape.";
 
   return (
     <Container sx={{ py: { xs: 6, lg: 12 } }}>
-      <>
-        <Box display={"flex"} justifyContent={{ xs: "center", md: "left" }}>
-          <Typography
-            variant="overline"
-            textTransform={"capitalize"}
-            color={"#55E6A5"}
-          >
-            why choose us
-          </Typography>
-        </Box>
-        <Grid
-          container
-          alignItems={"center"}
-          justifyContent={"center"}
-          spacing={{ xs: 2, md: 8 }}
-        >
-          <Grid item md={6}>
-            <Typography
-              className={ttl_web.className}
-              typography={{ xs: "h4", md: "h3" }}
-              style={{ fontWeight: 700 }}
-              textAlign={{ xs: "center", md: "left" }}
-            >
-              {texts.text1}
-            </Typography>
-          </Grid>
-          <Grid item md={6}>
-            <Typography
-              className={ttl_web.className}
-              textAlign={"justify"}
-              sx={{
-                color: "GrayText",
-              }}
-            >
-              {texts.text2}
-            </Typography>
-          </Grid>
-        </Grid>
-        <Box
-          py={3}
-          display={"flex"}
-          justifyContent={{ xs: "center", md: "left" }}
-        >
-          <Divider sx={{ width: 170, borderBottomWidth: 2 }} />
-        </Box>
-      </>
+      <Overview tag={tag} title={title} description={description} />
 
       {/* ####################
 
