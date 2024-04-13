@@ -15,6 +15,8 @@ import {
   Typography,
 } from "@mui/material";
 
+import * as React from "react";
+
 import { Instagram, LinkedIn, Share, Twitter } from "@mui/icons-material";
 import Link from "next/link";
 import { FaFacebookF } from "react-icons/fa6";
@@ -39,40 +41,88 @@ export const MeetTeamMembers = () => {
     { name: "jacob jones", designation: "Product designer", img: img3 },
   ];
 
-  const actions = [
-    {
-      icon: (
-        <Link href={"#"}>
-          <Instagram />
-        </Link>
-      ),
-      name: "Instagram",
-    },
-    {
-      icon: (
-        <Link href={"#"}>
-          <LinkedIn />
-        </Link>
-      ),
-      name: "LinkedIn",
-    },
-    {
-      icon: (
-        <Link href={"#"}>
-          <FaFacebookF style={{ fontSize: 22 }} />
-        </Link>
-      ),
-      name: "Facebook",
-    },
-    {
-      icon: (
-        <Link href={"#"}>
-          <Twitter />
-        </Link>
-      ),
-      name: "Twitter",
-    },
-  ];
+  function SpeedDialComponent() {
+    const [buttonOpen, setButtonOpen] = React.useState<boolean>(false);
+    const handleButtonOpen = (): void => {
+      setButtonOpen(true);
+    };
+
+    const handleButtonClose = (): void => {
+      setButtonOpen(false);
+    };
+
+    const actions = [
+      {
+        icon: (
+          <Link href={"#"}>
+            <Instagram />
+          </Link>
+        ),
+        name: "Instagram",
+      },
+      {
+        icon: (
+          <Link href={"#"}>
+            <LinkedIn />
+          </Link>
+        ),
+        name: "LinkedIn",
+      },
+      {
+        icon: (
+          <Link href={"#"}>
+            <FaFacebookF style={{ fontSize: 22 }} />
+          </Link>
+        ),
+        name: "Facebook",
+      },
+      {
+        icon: (
+          <Link href={"#"}>
+            <Twitter />
+          </Link>
+        ),
+        name: "Twitter",
+      },
+    ];
+
+    return (
+      <SpeedDial
+        FabProps={{ size: "small" }}
+        ariaLabel="SpeedDial openIcon example"
+        onClose={handleButtonClose}
+        onOpen={handleButtonOpen}
+        open={buttonOpen}
+        sx={{
+          ".MuiSpeedDial-actions": {
+            background: buttonOpen
+              ? "linear-gradient(to bottom, #000000 85%, transparent 15%)"
+              : "",
+            borderRadius: 3,
+            pt: 1,
+          },
+
+          position: "absolute",
+          bottom: -20,
+          right: "42%",
+        }}
+        icon={<SpeedDialIcon openIcon={<Share />} />}
+      >
+        {actions.map((action, i) => (
+          <SpeedDialAction
+            sx={{
+              ":hover": { bgcolor: "green" },
+              bgcolor: "black",
+              color: "white",
+            }}
+            key={i}
+            icon={action.icon}
+            tooltipTitle={action.name}
+          />
+        ))}
+      </SpeedDial>
+    );
+  }
 
   return (
     <Container sx={{ py: { xs: 6, lg: 12 } }}>
@@ -131,36 +181,7 @@ export const MeetTeamMembers = () => {
                 </Box>
               </Card>
 
-              <SpeedDial
-                FabProps={{ size: "small" }}
-                ariaLabel="SpeedDial openIcon example"
-                sx={{
-                  ":hover .MuiSpeedDial-actions": {
-                    background:
-                      "linear-gradient(to bottom, #000000 85%, transparent 15%)",
-                    borderRadius: 3,
-                    pt: 1,
-                  },
-
-                  position: "absolute",
-                  bottom: -20,
-                  right: "42%",
-                }}
-                icon={<SpeedDialIcon openIcon={<Share />} />}
-              >
-                {actions.map((action, i) => (
-                  <SpeedDialAction
-                    sx={{
-                      ":hover": { bgcolor: "green" },
-                      bgcolor: "black",
-                      color: "white",
-                    }}
-                    key={i}
-                    icon={action.icon}
-                    tooltipTitle={action.name}
-                  />
-                ))}
-              </SpeedDial>
+              <SpeedDialComponent />
             </Box>
           );
         })}
