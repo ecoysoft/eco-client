@@ -1,47 +1,49 @@
-import { Box, Grid, IconButton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { Navigation } from "swiper/modules";
+import { Swiper } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 export const CarouselDisplay = ({ children }: any) => {
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 768, min: 0 },
-      items: 1,
-    },
-  };
-
-  const ButtonGroup = ({ next, previous, goToSlide, ...rest }: any) => {
-    const {
-      carouselState: { currentSlide },
-    } = rest;
+  const ButtonGroup = () => {
     return (
       <Box
         display={"flex"}
         gap={2}
-        className="carousel-button-group"
         position={"absolute"}
         bottom={0}
         left={"50%"}
         sx={{ transform: "translate(-50%, 0%)" }}
+        zIndex={1}
       >
         <IconButton
-          sx={{ p: 2.5 }}
-          color="error"
-          className={currentSlide === 0 ? "disable" : ""}
-          onClick={() => previous()}
+          sx={{
+            p: { xs: 1.5, md: 2 },
+            color: "black",
+            bgcolor: "#55E6A5",
+            borderColor: "#55E6A5",
+            borderStyle: "solid",
+            borderWidth: "4px",
+          }}
+          disableRipple
+          className="arrow-prev"
         >
           <FaArrowLeftLong />
         </IconButton>
-        <IconButton sx={{ p: 2.5 }} color="error" onClick={() => next()}>
+        <IconButton
+          sx={{
+            p: { xs: 1.5, md: 2 },
+            color: "black",
+            bgcolor: "#55E6A5",
+            borderColor: "#55E6A5",
+            borderStyle: "solid",
+            borderWidth: "4px",
+          }}
+          disableRipple
+          className="arrow-next"
+        >
           <FaArrowRightLong />
         </IconButton>
       </Box>
@@ -49,38 +51,19 @@ export const CarouselDisplay = ({ children }: any) => {
   };
 
   return (
-    <Grid container justifyContent={"center"}>
-      <Carousel
-        responsive={responsive}
-        customButtonGroup={<ButtonGroup />}
-        additionalTransfrom={0}
-        arrows={false}
-        autoPlaySpeed={3000}
-        centerMode={false}
-        className=""
-        containerClass="container"
-        dotListClass=""
-        draggable
-        focusOnSelect={true}
-        infinite
-        itemClass=""
-        keyBoardControl
-        minimumTouchDrag={80}
-        pauseOnHover
-        renderArrowsWhenDisabled={false}
-        renderButtonGroupOutside={false}
-        renderDotsOutside={false}
-        rewind={false}
-        rewindWithAnimation={false}
-        rtl={false}
-        shouldResetAutoplay
-        showDots={false}
-        sliderClass=""
-        slidesToSlide={1}
-        swipeable
+    <Box position={"relative"}>
+      <Swiper
+        modules={[Navigation]}
+        slidesPerView={1}
+        navigation={{
+          nextEl: ".arrow-next",
+          prevEl: ".arrow-prev",
+          disabledClass: "swiper-button-disabled",
+        }}
       >
         {children}
-      </Carousel>
-    </Grid>
+      </Swiper>
+      <ButtonGroup />
+    </Box>
   );
 };
