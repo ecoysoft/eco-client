@@ -7,6 +7,8 @@ export const Overview = (props: any) => {
     title = "",
     description = null,
     sx = { xs: "center", md: "left" },
+    color = "",
+    dividerColor = "",
   } = props;
   return (
     <>
@@ -31,6 +33,7 @@ export const Overview = (props: any) => {
             typography={{ xs: "h4", md: "h3" }}
             style={{ fontWeight: 700 }}
             textAlign={sx}
+            color={color}
           >
             {title}
           </Typography>
@@ -42,9 +45,7 @@ export const Overview = (props: any) => {
               textAlign={"justify"}
               typography={"body2"}
               fontWeight={600}
-              sx={{
-                color: "GrayText",
-              }}
+              color={"GrayText"}
             >
               {description}
             </Typography>
@@ -52,7 +53,9 @@ export const Overview = (props: any) => {
         )}
       </Grid>
       <Box pt={2} pb={4} display={"flex"} justifyContent={sx}>
-        <Divider sx={{ width: 170, borderBottomWidth: 2 }} />
+        <Divider
+          sx={{ width: 170, borderBottomWidth: 2, bgcolor: dividerColor }}
+        />
       </Box>
     </>
   );

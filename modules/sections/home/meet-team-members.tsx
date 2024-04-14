@@ -103,8 +103,9 @@ export const MeetTeamMembers = () => {
           },
 
           position: "absolute",
-          bottom: -20,
-          right: "42%",
+          bottom: 0,
+          left: "50%",
+          transform: "translate(-50%, 6%)",
         }}
         icon={<SpeedDialIcon openIcon={<Share />} />}
       >
@@ -125,7 +126,7 @@ export const MeetTeamMembers = () => {
   }
 
   return (
-    <Container sx={{ py: { xs: 6, lg: 12 } }}>
+    <Container sx={{ py: { xs: 6, lg: 10 } }}>
       <Overview tag={tag} title={title} sx={sx} />
 
       <Grid container gap={4} justifyContent={"center"}>
@@ -159,6 +160,7 @@ export const MeetTeamMembers = () => {
                       fontWeight={"bold"}
                       textTransform={"capitalize"}
                       textAlign={"center"}
+                      color={"GrayText"}
                     >
                       {designation}
                     </Typography>
