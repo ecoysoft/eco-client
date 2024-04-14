@@ -19,7 +19,7 @@ export const WhyChooseUs = () => {
     "At ecoysoft Management, we simplify the design process for your business. Our expert designers and innovative solutions ensure seamless integration and impactful results. From concept to execution, we prioritize simplicity, efficiency, and excellence. Choose ecoysoft Management for an easier design journey and to stand out in today's competitive landscape.";
 
   return (
-    <Container sx={{ py: { xs: 6, lg: 12 } }}>
+    <Container sx={{ py: { xs: 6, lg: 10 } }}>
       <Overview tag={tag} title={title} description={description} />
 
       {/* ####################
