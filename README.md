@@ -24,7 +24,7 @@
 ## Backend
 ### DB-> MongoDB
 ### Catching-> Redis
-### ODB-> Mongoose
+### ODM-> Mongoose
 ### Validator-> ZOD
 ### Runtime: Nodejs
 ### Node Framework: Expressjs
